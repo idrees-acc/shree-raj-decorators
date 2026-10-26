@@ -8,12 +8,14 @@
 <meta property="og:title" content="Shree Raj Decorators · Malad West, since 2012">
 <meta property="og:description" content="We light up the night you celebrate. Mandaps, lighting, balloons and flowers for every family occasion in Mumbai.">
 <meta property="og:type" content="website">
-<meta property="og:image" content="assets/wedding-reception-stage-decorations-kochi.jpg">
+<meta property="og:image" content="https://idrees-acc.github.io/shree-raj-decorators/assets/wedding-reception-stage-decorations-kochi.jpg">
+<meta property="og:url" content="https://idrees-acc.github.io/shree-raj-decorators/">
+<link rel="canonical" href="https://idrees-acc.github.io/shree-raj-decorators/">
 <meta name="theme-color" content="#120c14">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23120c14'/%3E%3Ccircle cx='16' cy='16' r='5' fill='%23f0c677'/%3E%3Ccircle cx='16' cy='16' r='9' fill='none' stroke='%23f0c677' stroke-opacity='.35' stroke-width='2'/%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" href="assets/fonts/cormorant-garamond.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/cormorant-garamond-italic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/manrope.woff2" as="font" type="font/woff2" crossorigin>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"LocalBusiness","name":"Shree Raj Decorators","foundingDate":"2012",
  "description":"Mandap, lighting, balloon, flower, car and stage decoration, plus decor rentals, for weddings, birthdays and family functions.",
@@ -23,11 +25,17 @@
 </script>
 <script>document.documentElement.classList.add('js')</script>
 <style>
+/* fonts: Cormorant Garamond and Manrope (SIL Open Font License), Latin subset, self-hosted */
+@font-face { font-family: "Cormorant Garamond"; font-style: normal; font-weight: 300 700; font-display: swap; src: url(assets/fonts/cormorant-garamond.woff2) format("woff2") }
+@font-face { font-family: "Cormorant Garamond"; font-style: italic; font-weight: 300 700; font-display: swap; src: url(assets/fonts/cormorant-garamond-italic.woff2) format("woff2") }
+@font-face { font-family: "Manrope"; font-style: normal; font-weight: 200 800; font-display: swap; src: url(assets/fonts/manrope.woff2) format("woff2") }
+@font-face { font-family: "Cormorant fallback"; src: local("Georgia"), local("Times New Roman"); size-adjust: 88%; ascent-override: 102%; descent-override: 32%; line-gap-override: 0% }
+@font-face { font-family: "Manrope fallback"; src: local("Arial"), local("Helvetica"); size-adjust: 104%; ascent-override: 102%; descent-override: 28%; line-gap-override: 0% }
 :root {
-  --bg: #120c14; --bg-2: #1a111d; --card: #1f1523; --ink: #f4ece4; --dim: #b9a9b3; --faint: #7d6d78;
+  --bg: #120c14; --bg-2: #1a111d; --card: #1f1523; --ink: #f4ece4; --dim: #b9a9b3; --faint: #a99aa4;
   --gold: #f0c677; --gold-soft: rgba(240, 198, 119, .14); --edge: rgba(240, 198, 119, .16);
-  --display: "Cormorant Garamond", "Cormorant", Georgia, serif;
-  --body: "Manrope", "Avenir Next", system-ui, sans-serif;
+  --display: "Cormorant Garamond", "Cormorant fallback", Georgia, serif;
+  --body: "Manrope", "Manrope fallback", Arial, sans-serif;
   --m: max(20px, min(4vw, 48px)); --max: 1320px;
   --r-lg: 28px; --r-md: 18px; --r-sm: 10px;
   --z-grain: 50; --z-nav: 40; --z-peek: 30;
@@ -203,10 +211,16 @@ body::after { content: ""; position: fixed; inset: 0; z-index: var(--z-grain); p
 .foot .row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 18px 40px; font-size: 14px; color: var(--dim) }
 .foot .row nav { display: flex; flex-wrap: wrap; gap: 24px }
 .foot .row a { color: var(--ink) }
+.built { color: var(--dim) !important; text-decoration: none; transition: color .2s }
+.built b { font-weight: 600; color: var(--gold) }
+.built:hover { color: var(--ink) !important }
 .credits { margin-top: 28px; font-size: 13px; color: var(--faint); max-width: 120ch; line-height: 1.6 }
 .credits a { color: var(--dim) }
 
 /* entrances (content stays visible without script) */
+.hero .lede, .hero .ctas, .hero .facts { animation: rise .9s var(--ease) both }
+.hero .ctas { animation-delay: .08s } .hero .facts { animation-delay: .16s }
+@keyframes rise { from { transform: translateY(18px) } }
 .js .rv { opacity: 0; transform: translateY(28px); transition: opacity .9s var(--ease), transform .9s var(--ease); transition-delay: calc(var(--d, 0) * 90ms) }
 .js .rv.in { opacity: 1; transform: none }
 
@@ -248,7 +262,7 @@ body::after { content: ""; position: fixed; inset: 0; z-index: var(--z-grain); p
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto }
   .js .rv { opacity: 1; transform: none; transition: none }
-  .strip { animation: none }
+  .strip, .hero .lede, .hero .ctas, .hero .facts { animation: none }
   .seg-card { transform: none !important; filter: none !important }
 }
 </style>
@@ -273,13 +287,13 @@ body::after { content: ""; position: fixed; inset: 0; z-index: var(--z-grain); p
   <section class="hero" id="top">
     <canvas id="lights" aria-hidden="true"></canvas>
     <div class="wrap">
-      <h1 class="rv">We <span class="glow">light up</span> the night you celebrate</h1>
-      <p class="lede rv" style="--d:1">Mandaps, stage lighting, balloons and fresh flowers for weddings, birthdays and every family function. From our shop in Malad West, across Mumbai, since 2012.</p>
-      <div class="ctas rv" style="--d:2">
+      <h1>We <span class="glow">light up</span> the night you celebrate</h1>
+      <p class="lede">Mandaps, stage lighting, balloons and fresh flowers for weddings, birthdays and every family function. From our shop in Malad West, across Mumbai, since 2012.</p>
+      <div class="ctas">
         <a class="btn" data-wa href="#enquire">Get a quote on WhatsApp</a>
         <a class="btn ghost" href="#services">See what we decorate</a>
       </div>
-      <div class="facts rv" style="--d:3">
+      <div class="facts">
         <div><b>2012</b><span>Shop 13 opens in Malad West</span></div>
         <div><b>15 years</b><span>of wedding seasons</span></div>
         <div><b>5.0 ★</b><span>customer rating on Justdial</span></div>
@@ -295,21 +309,21 @@ body::after { content: ""; position: fixed; inset: 0; z-index: var(--z-grain); p
         <p class="lede rv" style="--d:1">Pick the occasion to see what's included. We plan every setup around your venue, from a two-hour birthday at home to a three-day wedding.</p>
       </div>
       <ul class="seglist">
-        <li class="rv"><a href="#weddings" data-img="assets/colorful-outdoor-wedding-stage-mandap-with-radiant.jpg"><span class="nm">Weddings &amp; mandaps</span><span class="tg">Mandap, jaimala stage, entry</span><span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
-        <li class="rv"><a href="#lighting" data-img="assets/wedding-reception-stage-decorations-kochi.jpg"><span class="nm">Sangeet &amp; reception lighting</span><span class="tg">Fairy lights, chandeliers</span><span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
-        <li class="rv"><a href="#balloons" data-img="assets/baby-shower-decorations.jpg"><span class="nm">Balloon decoration</span><span class="tg">Birthday, naamkaran, baby shower</span><span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
-        <li class="rv"><a href="#puja" data-img="assets/wedding-stage.jpg"><span class="nm">Puja &amp; traditional stages</span><span class="tg">Griha pravesh, Satyanarayan</span><span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
-        <li class="rv"><a href="#flowers" data-img="assets/flower-decoration-for-indian-wedding.jpg"><span class="nm">Flowers &amp; car decoration</span><span class="tg">Torans, garlands, the wedding car</span><span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
-        <li class="rv"><a href="#rentals" data-img="assets/diwali-lights-sector-22-gurgaon.jpg"><span class="nm">Rentals</span><span class="tg">Stage, lights, fans</span><span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
+        <li class="rv"><a href="#weddings" data-img="assets/colorful-outdoor-wedding-stage-mandap-with-radiant.webp"><span class="nm">Weddings &amp; mandaps</span><span class="tg">Mandap, jaimala stage, entry</span><span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
+        <li class="rv"><a href="#lighting" data-img="assets/wedding-reception-stage-decorations-kochi.webp"><span class="nm">Sangeet &amp; reception lighting</span><span class="tg">Fairy lights, chandeliers</span><span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
+        <li class="rv"><a href="#balloons" data-img="assets/baby-shower-decorations.webp"><span class="nm">Balloon decoration</span><span class="tg">Birthday, naamkaran, baby shower</span><span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
+        <li class="rv"><a href="#puja" data-img="assets/wedding-stage.webp"><span class="nm">Puja &amp; traditional stages</span><span class="tg">Griha pravesh, Satyanarayan</span><span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
+        <li class="rv"><a href="#flowers" data-img="assets/flower-decoration-for-indian-wedding.webp"><span class="nm">Flowers &amp; car decoration</span><span class="tg">Torans, garlands, the wedding car</span><span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
+        <li class="rv"><a href="#rentals" data-img="assets/diwali-lights-sector-22-gurgaon.webp"><span class="nm">Rentals</span><span class="tg">Stage, lights, fans</span><span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
       </ul>
     </div>
-    <div class="peek" id="peek" aria-hidden="true"><img alt="" src="assets/colorful-outdoor-wedding-stage-mandap-with-radiant.jpg"></div>
+    <div class="peek" id="peek" aria-hidden="true"><img alt="" loading="lazy" src="assets/colorful-outdoor-wedding-stage-mandap-with-radiant.webp"></div>
   </section>
 
   <div class="chapters wrap">
     <article class="seg" id="weddings" data-seg="weddings and mandaps">
       <div class="seg-card">
-        <figure class="seg-media"><img src="assets/colorful-outdoor-wedding-stage-mandap-with-radiant.jpg" width="2048" height="1232" alt="Outdoor wedding mandap under red and yellow fabric canopies on a lawn" loading="lazy"></figure>
+        <figure class="seg-media"><img src="assets/colorful-outdoor-wedding-stage-mandap-with-radiant.webp" width="2048" height="1232" alt="Outdoor wedding mandap under red and yellow fabric canopies on a lawn" loading="lazy"></figure>
         <div class="seg-body">
           <span class="kicker">Weddings</span>
           <h3>Mandaps your family will remember</h3>
@@ -325,7 +339,7 @@ body::after { content: ""; position: fixed; inset: 0; z-index: var(--z-grain); p
 
     <article class="seg" id="lighting" data-seg="sangeet and reception lighting">
       <div class="seg-card">
-        <figure class="seg-media"><img src="assets/wedding-reception-stage-decorations-kochi.jpg" width="1920" height="1442" alt="Reception stage with a curtain of fairy lights, flower rings and chandeliers" loading="lazy"></figure>
+        <figure class="seg-media"><img src="assets/wedding-reception-stage-decorations-kochi.webp" width="1920" height="1442" alt="Reception stage with a curtain of fairy lights, flower rings and chandeliers" loading="lazy"></figure>
         <div class="seg-body">
           <span class="kicker">Lighting</span>
           <h3>When the sun sets, we switch on</h3>
@@ -341,7 +355,7 @@ body::after { content: ""; position: fixed; inset: 0; z-index: var(--z-grain); p
 
     <article class="seg" id="balloons" data-seg="balloon decoration">
       <div class="seg-card">
-        <figure class="seg-media"><img src="assets/baby-shower-decorations.jpg" width="1920" height="1280" alt="Baby shower setup with a green and gold balloon arch, gold foil curtain and armchair" loading="lazy"></figure>
+        <figure class="seg-media"><img src="assets/baby-shower-decorations.webp" width="1920" height="1280" alt="Baby shower setup with a green and gold balloon arch, gold foil curtain and armchair" loading="lazy"></figure>
         <div class="seg-body">
           <span class="kicker">Balloons</span>
           <h3>Balloons for every little milestone</h3>
@@ -363,7 +377,7 @@ body::after { content: ""; position: fixed; inset: 0; z-index: var(--z-grain); p
 
     <article class="seg" id="puja" data-seg="puja and traditional stage decoration">
       <div class="seg-card">
-        <figure class="seg-media"><img src="assets/wedding-stage.jpg" width="1920" height="864" alt="Traditional stage with gold and white fabric, flower pillars and a decorated backdrop" loading="lazy"></figure>
+        <figure class="seg-media"><img src="assets/wedding-stage.webp" width="1920" height="864" alt="Traditional stage with gold and white fabric, flower pillars and a decorated backdrop" loading="lazy"></figure>
         <div class="seg-body">
           <span class="kicker">Puja &amp; ceremonies</span>
           <h3>Traditional stages, done properly</h3>
@@ -379,7 +393,7 @@ body::after { content: ""; position: fixed; inset: 0; z-index: var(--z-grain); p
 
     <article class="seg" id="flowers" data-seg="flower and car decoration">
       <div class="seg-card">
-        <figure class="seg-media"><img src="assets/flower-decoration-for-indian-wedding.jpg" width="1920" height="1424" alt="A decorator laying out marigolds, roses and gladioli for a wedding" loading="lazy"></figure>
+        <figure class="seg-media"><img src="assets/flower-decoration-for-indian-wedding.webp" width="1920" height="1424" alt="A decorator laying out marigolds, roses and gladioli for a wedding" loading="lazy"></figure>
         <div class="seg-body">
           <span class="kicker">Flowers</span>
           <h3>Fresh flowers, from door to car</h3>
@@ -395,7 +409,7 @@ body::after { content: ""; position: fixed; inset: 0; z-index: var(--z-grain); p
 
     <article class="seg" id="rentals" data-seg="renting decoration items">
       <div class="seg-card">
-        <figure class="seg-media"><img src="assets/diwali-lights-sector-22-gurgaon.jpg" width="1920" height="995" alt="Strings of red and white festive lights" loading="lazy"></figure>
+        <figure class="seg-media"><img src="assets/diwali-lights-sector-22-gurgaon.webp" width="1920" height="995" alt="Strings of red and white festive lights" loading="lazy"></figure>
         <div class="seg-body">
           <span class="kicker">Rentals</span>
           <h3>Decorating it yourself? Rent from us</h3>
@@ -429,12 +443,12 @@ body::after { content: ""; position: fixed; inset: 0; z-index: var(--z-grain); p
     </div>
     <div class="strip-wrap">
       <div class="strip" id="strip">
-        <figure><img src="assets/marigold-flowers-as-garland.jpg" width="1920" height="2560" alt="Marigold garland close up" loading="lazy"></figure>
-        <figure><img src="assets/wedding-reception-stage-decorations-kochi.jpg" width="1920" height="1442" alt="Reception stage lit with fairy lights" loading="lazy"></figure>
-        <figure><img src="assets/india-colours-of-india-010-flower-market.jpg" width="1920" height="2560" alt="Flower sellers with heaps of marigolds" loading="lazy"></figure>
-        <figure><img src="assets/colorful-outdoor-wedding-stage-mandap-with-radiant.jpg" width="2048" height="1232" alt="Outdoor mandap with red and yellow canopy" loading="lazy"></figure>
-        <figure><img src="assets/fairy-lights-draped-on-tree-branches-at.jpg" width="1920" height="1440" alt="Fairy lights in tree branches at night" loading="lazy"></figure>
-        <figure><img src="assets/baby-shower-decorations.jpg" width="1920" height="1280" alt="Balloon arch for a baby shower" loading="lazy"></figure>
+        <figure><img src="assets/marigold-flowers-as-garland.webp" width="1920" height="2560" alt="Marigold garland close up" loading="lazy"></figure>
+        <figure><img src="assets/wedding-reception-stage-decorations-kochi.webp" width="1920" height="1442" alt="Reception stage lit with fairy lights" loading="lazy"></figure>
+        <figure><img src="assets/india-colours-of-india-010-flower-market.webp" width="1920" height="2560" alt="Flower sellers with heaps of marigolds" loading="lazy"></figure>
+        <figure><img src="assets/colorful-outdoor-wedding-stage-mandap-with-radiant.webp" width="2048" height="1232" alt="Outdoor mandap with red and yellow canopy" loading="lazy"></figure>
+        <figure><img src="assets/fairy-lights-draped-on-tree-branches-at.webp" width="1920" height="1440" alt="Fairy lights in tree branches at night" loading="lazy"></figure>
+        <figure><img src="assets/baby-shower-decorations.webp" width="1920" height="1280" alt="Balloon arch for a baby shower" loading="lazy"></figure>
       </div>
     </div>
   </section>
@@ -486,6 +500,7 @@ body::after { content: ""; position: fixed; inset: 0; z-index: var(--z-grain); p
     <div class="row">
       <span>Mandap, lighting, balloon &amp; flower decorators · Malad West, Mumbai · since 2012</span>
       <nav aria-label="Footer"><a href="#services">Services</a><a href="#enquire">Enquire</a><a href="https://www.instagram.com/shreerajdecorators" target="_blank" rel="noopener">Instagram</a><a href="https://www.justdial.com/Mumbai/Shree-Raj-Decorators-Near-Kashmiri-Tailor-Malad-West" target="_blank" rel="noopener">Justdial</a><a href="#top">Back to top ↑</a></nav>
+      <a class="built" href="https://aewaz.com/" target="_blank" rel="noopener">Built with care by <b>Aewaz Technologies</b></a>
     </div>
     <p class="credits">Photos: <a href="https://wordpress.org/photos/photo/21265cdae9/">mandap</a> by Makarand Mane (CC0); <a href="https://commons.wikimedia.org/wiki/File:Wedding_reception_stage,_decorations,_Kochi.jpg">reception stage</a> (CC BY-SA 4.0); <a href="https://commons.wikimedia.org/wiki/File:Baby_shower_decorations.jpg">baby shower</a> (CC BY-SA 4.0); <a href="https://commons.wikimedia.org/wiki/File:Wedding_Stage.jpg">traditional stage</a> (CC BY-SA 4.0); <a href="https://commons.wikimedia.org/wiki/File:Flower_decoration_for_Indian_wedding.jpg">flower decoration</a> by Pavan santhosh.s (CC BY-SA 3.0); <a href="https://commons.wikimedia.org/wiki/File:Diwali_lights,_Sector-22,_Gurgaon.jpg">Diwali lights</a> by Slyronit (CC BY-SA 4.0); <a href="https://commons.wikimedia.org/wiki/File:Marigold_Flowers_as_garland.jpg">marigolds</a> by SnapMeUp (CC BY 4.0); <a href="https://commons.wikimedia.org/wiki/File:India_-_Colours_of_India_-_010_-_Flower_Market_(843953060).jpg">flower market</a> (CC BY 2.0); <a href="https://commons.wikimedia.org/wiki/File:Fairy_Lights_Draped_on_Tree_Branches_at_Night_in_an_Urban_Setting.jpg">fairy lights</a> by HEadlot7 (CC BY 4.0). Via Wikimedia Commons and WordPress Photos. © <span id="yr">2026</span> Shree Raj Decorators.</p>
   </div>
