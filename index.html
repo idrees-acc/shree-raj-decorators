@@ -17,11 +17,11 @@
 <link rel="preload" href="assets/fonts/cormorant-garamond-italic.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/manrope.woff2" as="font" type="font/woff2" crossorigin>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"LocalBusiness","name":"Shree Raj Decorators","image":"https://idrees-acc.github.io/shree-raj-decorators/assets/wedding-reception-stage-flowers-drapes.jpg","foundingDate":"2012",
+{"@context":"https://schema.org","@type":"LocalBusiness","name":"Shree Raj Decorators","telephone":"+91-85913-25006","image":"https://idrees-acc.github.io/shree-raj-decorators/assets/wedding-reception-stage-flowers-drapes.jpg","foundingDate":"2012",
  "description":"Mandap, lighting, flower, car and stage decoration, plus decor rentals, for weddings, pujas and family functions.",
  "address":{"@type":"PostalAddress","streetAddress":"Shop No 13, Shree Amizara Co-operative Housing Society, Near Kashmiri Tailor, 6th Mamletdarwadi, Malad West","addressLocality":"Mumbai","postalCode":"400064","addressRegion":"Maharashtra","addressCountry":"IN"},
  "aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","ratingCount":"3"},
- "sameAs":["https://www.instagram.com/shreerajdecorators","https://www.justdial.com/Mumbai/Shree-Raj-Decorators-Near-Kashmiri-Tailor-Malad-West"]}
+ "sameAs":["https://www.instagram.com/shreerajdecorators","https://www.justdial.com/Mumbai/Shree-Raj-Decorators-Near-Kashmiri-Tailor-Malad-West/022PXX22-XX22-251128175933-P9J6_BZDET"]}
 </script>
 <script>document.documentElement.classList.add('js')</script>
 <style>
@@ -81,6 +81,8 @@ body::after { content: ""; position: fixed; inset: 0; z-index: var(--z-grain); p
 .brand { display: flex; align-items: baseline; gap: 10px; text-decoration: none }
 .brand b { font: 700 22px var(--display); letter-spacing: .12em; color: var(--gold) }
 .brand small { font-size: 13px; color: var(--dim); letter-spacing: .06em }
+.est { font-style: normal; font-weight: 600; color: var(--gold); text-shadow: 0 0 18px rgba(240, 198, 119, .55) }
+.facts b.est { color: var(--gold) }
 .nav ul { display: flex; gap: 30px; list-style: none; margin: 0; padding: 0; font-size: 15px }
 .nav ul a { text-decoration: none; color: var(--dim); transition: color .2s }
 .nav ul a:hover, .nav ul a.cur { color: var(--ink) }
@@ -194,17 +196,28 @@ body::after { content: ""; position: fixed; inset: 0; z-index: var(--z-grain); p
 .btn[aria-disabled="true"] { opacity: .45; pointer-events: none; box-shadow: none }
 
 /* footer */
-.foot { padding: 80px 0 34px; border-top: 1px solid var(--edge); overflow: hidden }
-.foot .mark { font: 600 clamp(46px, 9.6vw, 156px)/.9 var(--display); letter-spacing: -0.03em; white-space: nowrap; margin-bottom: 50px }
-.foot .mark span { color: var(--gold) }
-.foot .row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 18px 40px; font-size: 14px; color: var(--dim) }
-.foot .row nav { display: flex; flex-wrap: wrap; gap: 24px }
-.foot .row a { color: var(--ink) }
-.built { color: var(--dim) !important; text-decoration: none; transition: color .2s }
+.foot { position: relative; padding: clamp(90px, 10vw, 140px) 0 30px; border-top: 1px solid var(--edge); overflow: hidden;
+  background: radial-gradient(55% 60% at 12% 0%, rgba(240, 198, 119, .08), transparent 70%), radial-gradient(50% 60% at 95% 100%, rgba(120, 52, 110, .22), transparent 70%), var(--bg) }
+.foot-top { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 40px 64px; padding-bottom: clamp(56px, 7vw, 88px); border-bottom: 1px solid var(--edge) }
+.seal { display: grid; place-items: center; align-content: center; width: 168px; aspect-ratio: 1; border-radius: 50%; text-align: center; flex: none;
+  box-shadow: inset 0 0 0 1px rgba(240, 198, 119, .45), inset 0 0 0 7px var(--bg), inset 0 0 0 8px rgba(240, 198, 119, .2), 0 0 70px -12px rgba(240, 198, 119, .45) }
+.seal span { font-size: 11px; letter-spacing: .24em; text-transform: uppercase; color: var(--dim) }
+.seal b { font: 600 52px/1 var(--display); color: var(--gold); letter-spacing: -0.02em; margin: 4px 0 6px; text-shadow: 0 0 26px rgba(240, 198, 119, .55) }
+.foot-cta { display: flex; flex-wrap: wrap; align-items: center; gap: 24px 40px; flex: 1 1 420px; justify-content: flex-end }
+.foot-cta p { font: 500 clamp(22px, 2.2vw, 30px)/1.25 var(--display); max-width: 30ch; color: var(--ink) }
+.foot-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 40px; padding: clamp(48px, 6vw, 72px) 0 }
+.foot-h { font: 500 13px var(--body); letter-spacing: .08em; color: var(--gold); margin-bottom: 18px }
+.foot-grid address, .foot-grid p { font-style: normal; font-size: 15px; color: var(--dim); max-width: 36ch; line-height: 1.7 }
+.foot-grid address + p { margin-top: 12px; color: var(--ink) }
+.foot-grid ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; font-size: 15px }
+.foot .mark { font: 600 clamp(46px, 11vw, 178px)/.85 var(--display); letter-spacing: -0.035em; white-space: nowrap; margin: 0 0 30px; color: transparent; -webkit-text-stroke: 1px rgba(244, 236, 228, .22); user-select: none }
+.foot .mark span { -webkit-text-stroke-color: rgba(240, 198, 119, .45) }
+.foot-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 32px; padding-top: 24px; border-top: 1px solid var(--edge); font-size: 13px }
+.foot-bar .credits { margin: 0; margin-right: auto }
+.built { color: var(--dim); text-decoration: none; transition: color .2s }
 .built b { font-weight: 600; color: var(--gold) }
-.built:hover { color: var(--ink) !important }
+.built:hover { color: var(--ink) }
 .credits { margin-top: 28px; font-size: 13px; color: var(--faint); max-width: 120ch; line-height: 1.6 }
-.credits a { color: var(--dim) }
 
 /* entrances (content stays visible without script) */
 .hero .lede, .hero .ctas, .hero .facts { animation: rise .9s var(--ease) both }
@@ -214,6 +227,8 @@ body::after { content: ""; position: fixed; inset: 0; z-index: var(--z-grain); p
 .js .rv.in { opacity: 1; transform: none }
 
 @media (max-width: 960px) {
+  .foot-grid { grid-template-columns: 1fr 1fr } .foot-grid > :first-child { grid-column: 1 / -1 }
+  .foot-cta { justify-content: flex-start }
   .nav ul { display: none }
   .brand small { display: none }
   .facts { grid-template-columns: 1fr 1fr }
@@ -227,6 +242,8 @@ body::after { content: ""; position: fixed; inset: 0; z-index: var(--z-grain); p
   .peek { display: none }
 }
 @media (max-width: 560px) {
+  .seal { width: 140px } .seal b { font-size: 40px } .seal span { font-size: 10px; letter-spacing: .18em }
+  .foot-cta .btn { width: 100%; justify-content: center }
   body { font-size: 17px }
   .hero h1 { font-size: 13.4vw }
   .quick-foot .btn { width: 100%; justify-content: center }
@@ -261,7 +278,7 @@ body::after { content: ""; position: fixed; inset: 0; z-index: var(--z-grain); p
 
 <header class="nav" id="nav">
   <div class="wrap">
-    <a class="brand" href="#top"><b>SHREE RAJ</b><small>Decorators · since 2012</small></a>
+    <a class="brand" href="#top"><b>SHREE RAJ</b><small>Decorators · since <em class="est">2012</em></small></a>
     <ul>
       <li><a href="#services">Services</a></li>
       <li><a href="#story">Our story</a></li>
@@ -277,13 +294,13 @@ body::after { content: ""; position: fixed; inset: 0; z-index: var(--z-grain); p
     <canvas id="lights" aria-hidden="true"></canvas>
     <div class="wrap">
       <h1>We <span class="glow">light up</span> the night you celebrate</h1>
-      <p class="lede">Mandaps, stage lighting and fresh flowers for weddings, pujas and every family function. From our shop in Malad West, across Mumbai, since 2012.</p>
+      <p class="lede">Mandaps, stage lighting and fresh flowers for weddings, pujas and every family function. From our shop in Malad West, across Mumbai, since <em class="est">2012</em>.</p>
       <div class="ctas">
         <a class="btn" data-wa href="#enquire">Get a quote on WhatsApp</a>
         <a class="btn ghost" href="#services">See what we decorate</a>
       </div>
       <div class="facts">
-        <div><b>2012</b><span>Shop 13 opens in Malad West</span></div>
+        <div><b class="est">2012</b><span>Shop 13 opens in Malad West</span></div>
         <div><b>15 years</b><span>of wedding seasons</span></div>
         <div><b>5.0 ★</b><span>customer rating on Justdial</span></div>
         <div><b>9 am</b><span>open daily from</span></div>
@@ -397,7 +414,7 @@ body::after { content: ""; position: fixed; inset: 0; z-index: var(--z-grain); p
         <h2 id="story-h" class="rv">Fifteen years of Malad's celebrations</h2>
         <p class="lede rv" style="--d:1">Shree Raj Decorators opened at Shop 13, Shree Amizara Society, near Kashmiri Tailor, in 2012. We began with mandaps and lighting, and families kept calling us back for the next engagement, puja and naamkaran.</p>
         <p class="lede rv" style="--d:2">Every job still starts the same way: we see the venue, listen to what the family wants, and plan the decoration around it.</p>
-        <a class="rate rv" style="--d:3" href="https://www.justdial.com/Mumbai/Shree-Raj-Decorators-Near-Kashmiri-Tailor-Malad-West" target="_blank" rel="noopener"><b>5.0</b><span>Rated by our customers<br>Read the reviews on Justdial</span></a>
+        <a class="rate rv" style="--d:3" href="https://www.justdial.com/Mumbai/Shree-Raj-Decorators-Near-Kashmiri-Tailor-Malad-West/022PXX22-XX22-251128175933-P9J6_BZDET" target="_blank" rel="noopener"><b>5.0</b><span>Rated by our customers<br>Read the reviews on Justdial</span></a>
       </div>
     </div>
   </section>
@@ -448,7 +465,7 @@ body::after { content: ""; position: fixed; inset: 0; z-index: var(--z-grain); p
         <dl class="visit">
           <div class="rv"><dt>Shop</dt><dd><p>Shop No 13, Shree Amizara CHS, near Kashmiri Tailor, 6th Mamletdarwadi, Malad West, Mumbai 400 064</p></dd></div>
           <div class="rv"><dt>Hours</dt><dd><p>Open daily from 9 am</p></dd></div>
-          <div class="rv"><dt>Find us</dt><dd><p><a class="link" href="https://www.google.com/maps/search/?api=1&amp;query=Shree+Raj+Decorators+Malad+West+Mumbai" target="_blank" rel="noopener">Directions</a> · <a class="link" href="https://www.justdial.com/Mumbai/Shree-Raj-Decorators-Near-Kashmiri-Tailor-Malad-West" target="_blank" rel="noopener">Justdial</a> · <a class="link" href="https://www.instagram.com/shreerajdecorators" target="_blank" rel="noopener">Instagram</a></p></dd></div>
+          <div class="rv"><dt>Find us</dt><dd><p><a class="link" href="https://www.google.com/maps/search/?api=1&amp;query=Shree+Raj+Decorators+Malad+West+Mumbai" target="_blank" rel="noopener">Directions</a> · <a class="link" href="https://www.justdial.com/Mumbai/Shree-Raj-Decorators-Near-Kashmiri-Tailor-Malad-West/022PXX22-XX22-251128175933-P9J6_BZDET" target="_blank" rel="noopener">Justdial</a> · <a class="link" href="https://www.instagram.com/shreerajdecorators" target="_blank" rel="noopener">Instagram</a></p></dd></div>
         </dl>
       </div>
       <div class="quick card rv" id="quick">
@@ -483,19 +500,41 @@ body::after { content: ""; position: fixed; inset: 0; z-index: var(--z-grain); p
 
 <footer class="foot">
   <div class="wrap">
-    <div class="mark">Shree Raj <span>Decorators</span></div>
-    <div class="row">
-      <span>Mandap, lighting &amp; flower decorators · Malad West, Mumbai · since 2012</span>
-      <nav aria-label="Footer"><a href="#services">Services</a><a href="#enquire">Enquire</a><a href="https://www.instagram.com/shreerajdecorators" target="_blank" rel="noopener">Instagram</a><a href="https://www.justdial.com/Mumbai/Shree-Raj-Decorators-Near-Kashmiri-Tailor-Malad-West" target="_blank" rel="noopener">Justdial</a><a href="#top">Back to top ↑</a></nav>
-      <a class="built" href="https://aewaz.com/" target="_blank" rel="noopener">Built with care by <b>Aewaz Technologies</b></a>
+    <div class="foot-top">
+      <div class="seal" aria-label="Established 2012"><span>Est.</span><b>2012</b><span>Malad West</span></div>
+      <div class="foot-cta">
+        <p>Planning a wedding, puja or sangeet? Tell us the date and we'll reply on WhatsApp with ideas and a price.</p>
+        <a class="btn" data-wa href="#enquire"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.3-.5.1-1 .1-1.7-.1a13 13 0 0 1-5.6-4.9c-.5-.7-1-1.6-1-2.6 0-1 .5-1.5.8-1.8.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.3.1.2.1.6-.1 1.2Z"/></svg>Plan my event</a>
+      </div>
     </div>
-    <p class="credits">© <span id="yr">2026</span> Shree Raj Decorators.</p>
+    <div class="foot-grid">
+      <div>
+        <h2 class="foot-h">Visit</h2>
+        <address>Shop No 13, Shree Amizara CHS, near Kashmiri Tailor, 6th Mamletdarwadi, Malad West, Mumbai 400 064</address>
+        <p>Open daily from 9 am</p>
+        <p><a class="link" href="tel:+918591325006">+91 85913 25006</a></p>
+      </div>
+      <nav aria-label="Footer">
+        <h2 class="foot-h">Explore</h2>
+        <ul><li><a class="link" href="#services">Services</a></li><li><a class="link" href="#story">Our story</a></li><li><a class="link" href="#work">Our work</a></li><li><a class="link" href="#enquire">Enquire</a></li></ul>
+      </nav>
+      <div>
+        <h2 class="foot-h">Elsewhere</h2>
+        <ul><li><a class="link" href="https://www.justdial.com/Mumbai/Shree-Raj-Decorators-Near-Kashmiri-Tailor-Malad-West/022PXX22-XX22-251128175933-P9J6_BZDET" target="_blank" rel="noopener">Justdial · 5.0 ★</a></li><li><a class="link" href="https://www.instagram.com/shreerajdecorators" target="_blank" rel="noopener">Instagram</a></li><li><a class="link" href="https://www.google.com/maps/search/?api=1&amp;query=Shree+Raj+Decorators+Malad+West+Mumbai" target="_blank" rel="noopener">Directions</a></li></ul>
+      </div>
+    </div>
+    <div class="mark" aria-hidden="true">Shree Raj <span>Decorators</span></div>
+    <div class="foot-bar">
+      <p class="credits">© <span id="yr">2026</span> Shree Raj Decorators · decorating Mumbai since <em class="est">2012</em></p>
+      <a class="built" href="https://aewaz.com/" target="_blank" rel="noopener">Built with care by <b>Aewaz Technologies</b></a>
+      <a class="link" href="#top">Back to top ↑</a>
+    </div>
   </div>
 </footer>
 
 <script>
 // WhatsApp number: 91 + 10-digit mobile, digits only
-const WA = '91XXXXXXXXXX';
+const WA = '918591325006';
 const wa = t => 'https://wa.me/' + WA + '?text=' + encodeURIComponent(t);
 const openWa = t => { window.open(wa(t), '_blank', 'noopener') || (location.href = wa(t)) };
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
